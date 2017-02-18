@@ -28,7 +28,24 @@ class Person {
 }
 
 let p1 = new Person('Pho', 18);
+let p2 = new Person('Huong', 30);
+
+Person.prototype.showInfo = function () {
+  console.log(this.name + ',' + this.age + ',');
+};
+
 console.log(p1);
-p1.addAge();
-console.log(p1);
-p1.chao();
+console.log(p2);
+p1.showInfo();
+p2.showInfo();
+// console.log(p1);
+// p1.addAge();
+// console.log(p1);
+// p1.chao();
+//
+// p1.salary = 1000;
+// p1.showSalary = function(){
+//   console.log(this.salary);
+// }
+// console.log(p1);
+// p1.showSalary()
