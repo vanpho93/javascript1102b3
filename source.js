@@ -439,8 +439,25 @@ let data = `<rss xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2
   </channel>
   </rss>`;
 
-function Tin(title, desc, link, image){
-  this.ti
+// function Tin(title, desc, link, image){
+//   this.ti
+// }
+
+// let mangTin = [];
+
+let a = "weess<item>abcd</item>adfd"
+
+//Viet function truyen vao pre post return body
+
+let getBody = (source, pre, post) => {
+  let indexPre = source.indexOf(pre) + pre.length;
+  let indexPost = source.indexOf(post);
+  return source.substring(indexPre, indexPost);
 }
 
-let mangTin = [];
+// console.log(getBody(a, '<item>', '</item>'));
+
+let arrayItem = data.split('</item>');
+let anItem = arrayItem[1];
+
+console.log(getBody(anItem, '<title>', '</title>'));
