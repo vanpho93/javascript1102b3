@@ -439,15 +439,14 @@ let data = `<rss xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2
   </channel>
   </rss>`;
 
-// function Tin(title, desc, link, image){
-//   this.ti
-// }
+function Tin(title, desc, link, image){
+  this.title = title;
+  this.desc = desc;
+  this.link = link;
+  this.image = image;
+}
 
-// let mangTin = [];
-
-let a = "weess<item>abcd</item>adfd"
-
-//Viet function truyen vao pre post return body
+let mangTin = [];
 
 let getBody = (source, pre, post) => {
   let indexPre = source.indexOf(pre) + pre.length;
@@ -455,20 +454,21 @@ let getBody = (source, pre, post) => {
   return source.substring(indexPre, indexPost);
 }
 
-// console.log(getBody(a, '<item>', '</item>'));
-
 let arrayItem = data.split('</item>');
-let anItem = arrayItem[1];
-// console.log(getBody(anItem, '<title>', '</title>'));
 
 let getInfoFromItem = (item) => {
   let title = getBody(item, '<title>', '</title>');
   let desc = getBody(item, '</a></br>', `]]>`).trim();
   let link = getBody(item, '<link>', '</link>').trim();
-  let image = getBody(item, 'src="', '" ></a>')
-  // let link = getBody(item)
-  // let image = getBody(item)
-  console.log(image);
+  let image = getBody(item, 'src="', '" ></a>');
+  return new Tin(title, desc, link, image);
 }
 
-getInfoFromItem(anItem);
+arrayItem.forEach(e => {
+  mangTin.push(getInfoFromItem(e));
+});
+
+// console.log(mangTin);
+
+let mang = arrayItem.map(getInfoFromItem);
+console.log(mang);
