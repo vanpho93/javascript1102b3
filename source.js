@@ -459,5 +459,16 @@ let getBody = (source, pre, post) => {
 
 let arrayItem = data.split('</item>');
 let anItem = arrayItem[1];
+// console.log(getBody(anItem, '<title>', '</title>'));
 
-console.log(getBody(anItem, '<title>', '</title>'));
+let getInfoFromItem = (item) => {
+  let title = getBody(item, '<title>', '</title>');
+  let desc = getBody(item, '</a></br>', `]]>`).trim();
+  let link = getBody(item, '<link>', '</link>').trim();
+  let image = getBody(item, 'src="', '" ></a>')
+  // let link = getBody(item)
+  // let image = getBody(item)
+  console.log(image);
+}
+
+getInfoFromItem(anItem);
