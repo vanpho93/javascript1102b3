@@ -34,10 +34,10 @@ Person.prototype.showInfo = function () {
   console.log(this.name + ',' + this.age + ',');
 };
 
-console.log(p1);
-console.log(p2);
-p1.showInfo();
-p2.showInfo();
+// console.log(p1);
+// console.log(p2);
+// p1.showInfo();
+// p2.showInfo();
 // console.log(p1);
 // p1.addAge();
 // console.log(p1);
@@ -49,3 +49,8 @@ p2.showInfo();
 // }
 // console.log(p1);
 // p1.showSalary()
+
+let p3 = Object.assign({}, p1);
+p1.name = 'PPP';
+console.log(p3);
+console.log(p1);
