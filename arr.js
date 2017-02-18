@@ -26,6 +26,15 @@ let mang = [p1, p2, p3];
 // let s90 = mang.findIndex(e => e.salary > 10);
 // console.log(s90);
 
-let older19 = mang.filter(e => e.age > 19);
+// let older19 = mang.filter(e => e.age > 199);
+//
+// console.log(older19);
 
-console.log(older19);
+let arr = mang.sort((a, b) => {
+  // if(a.salary > b.salary) return 1;
+  // if(a.salary < b.salary) return -1;
+  // return 0;
+  return a.salary - b.salary;
+});
+
+console.log(arr);
