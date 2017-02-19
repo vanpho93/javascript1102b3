@@ -1,11 +1,12 @@
 let fs = require('fs');
 
 fs.readFile('./a.tx', 'utf8', (err, result) => {
-  // if(err) console.log(err.toString());
-  if(err) throw err;
-  console.log('Dang chay');
-  // console.log(result);
-});
+    // if(err) console.log(err.toString());
+    if(err) throw err;
+    console.log('Dang chay');
+    // console.log(result);
+  });
+}
 
 // err = undefined
 
